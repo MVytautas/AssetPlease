@@ -81,6 +81,13 @@
         $(thisAlert).removeClass('alert-validate');
     }
     
-    
+    // api address should go here
+    app.post('/', urlencodedParser, function (req, res){
+        var reply='';
+        reply += req.body.name;
+        reply += req.body.email; 
+        reply += req.body.message;
+        res.send(reply);
+       });
 
 })(jQuery);
